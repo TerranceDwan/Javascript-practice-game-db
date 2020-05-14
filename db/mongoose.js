@@ -1,8 +1,6 @@
 var mongoose = require('mongoose')
 
-const URI =
-  'mongodb+srv://taskapp:ZCsFJM5W4sfjaaD4@cluster0-i1yp3.mongodb.net/test?retryWrites=true&w=majority'
-
+const URI = process.env.MONGODB_URI
 const connectDB = async () => {
   await mongoose.connect(URI, {
     useNewUrlParser: true,

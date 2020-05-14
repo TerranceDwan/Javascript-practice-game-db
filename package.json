@@ -4,7 +4,8 @@
   "description": "",
   "main": "model.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "dev": "./node_modules/.bin/env-cmd -f ./config/dev.env nodemon index.js",
     "db": "/Users/Terrance/mongodb/bin/mongod.exe --dbpath /Users/Terrance/mongodb-data"
   },
   "author": "",
@@ -13,5 +14,8 @@
     "express": "^4.17.1",
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.11"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
   }
 }

@@ -8,8 +8,6 @@ const port = process.env.PORT || 3000
 
 connectDB()
 
-app.use(express.json())
-app.use(router)
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header(
@@ -18,6 +16,9 @@ app.use((req, res, next) => {
   )
   next()
 })
+
+app.use(express.json())
+app.use(router)
 
 app.listen(port, () => {
   console.log('Server is up on server ' + port)

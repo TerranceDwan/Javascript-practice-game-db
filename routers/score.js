@@ -19,7 +19,7 @@ router.post('/highScores/:initials/:score', async (req, res) => {
 router.get('/highScores', async (req, res) => {
   try {
     const highScores = await Score.find()
-      .sort({ score: -1 })
+      .sort({ score: 1 })
       .limit(9)
     res.send(highScores)
   } catch (e) {
